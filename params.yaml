@@ -23,7 +23,7 @@ mlflow_config:
   experiment_ids: "625642776096586058"
  
 random_forest: 
-  max_depth: 10
+  max_depth: 20
   n_estimators: 30
 
 model_dir: models/model.joblib

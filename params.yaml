@@ -4,7 +4,7 @@ external_data_config:
 
 raw_data_config: 
   raw_data_csv: data/raw/train.csv
-  model_var: ['Temperature','Oxygen','Humidity']
+  model_var: ['Temperature','Oxygen','Humidity', 'Prediction']
   train_test_split_ratio: 0.2
   target: Prediction 
   random_state: 111
@@ -31,5 +31,5 @@ model_dir: models/model.joblib
 model_webapp_dir: webapp/model_webapp_dir/model.joblib
 
 model_monitor:
-  target_col_name: Prediction
+  target_col_name: target
   monitor_dashboard_html: reports/data_and_target_drift_dashboard.html

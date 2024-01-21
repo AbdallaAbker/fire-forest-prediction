@@ -1,7 +1,10 @@
-fire-forest-prediction-model
+Forest-Fire-Prediction-Model
 ==============================
 
 End to End Machine learning project with MLOPS tools
+
+![app prediction in action](https://github.com/AbdallaAbker/fire-forest-prediction/assets/50424683/d5658ade-43a2-44be-997f-6722f8db294e)
+
 
 Project Organization
 ------------

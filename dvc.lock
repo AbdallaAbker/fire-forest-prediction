@@ -14,15 +14,15 @@ stages:
     outs:
     - path: data/raw/train.csv
       hash: md5
-      md5: 20099fe1a4d659726d6f409ecfada4b3
-      size: 54782
+      md5: aac71e18af67f82ca1ef9d41d0a0c09b
+      size: 56793
   split_data:
     cmd: python src/data/split_data.py --config=params.yaml
     deps:
     - path: data/raw/train.csv
       hash: md5
-      md5: 20099fe1a4d659726d6f409ecfada4b3
-      size: 54782
+      md5: aac71e18af67f82ca1ef9d41d0a0c09b
+      size: 56793
     - path: src/data/split_data.py
       hash: md5
       md5: 1ad4dfd69edd185c85573fd7318ac011
@@ -30,9 +30,44 @@ stages:
     outs:
     - path: data/processed/forest_fire_test.csv
       hash: md5
-      md5: 2e3022cc3894205fa137330917932922
-      size: 10943
+      md5: 24bd18c318014e2667f63f286031b916
+      size: 11354
     - path: data/processed/forest_fire_train.csv
       hash: md5
-      md5: f9053ee5baee4320df202c50f54d4666
-      size: 43813
+      md5: 886e835daac46f28d6d7c1bc2433460b
+      size: 45424
+  model_train:
+    cmd: python src/models/train_model.py --config=params.yaml
+    deps:
+    - path: data/processed/forest_fire_test.csv
+      hash: md5
+      md5: 24bd18c318014e2667f63f286031b916
+      size: 11354
+    - path: data/processed/forest_fire_train.csv
+      hash: md5
+      md5: 886e835daac46f28d6d7c1bc2433460b
+      size: 45424
+    - path: src/models/train_model.py
+      hash: md5
+      md5: 885277555434aea39a4d4ae21e42767d
+      size: 3779
+    params:
+      params.yaml:
+        random_forest.max_depth: 20
+        random_forest.n_estimators: 30
+  log_production_model:
+    cmd: python src/models/production_model_selection.py --config=params.yaml
+    deps:
+    - path: src/models/production_model_selection.py
+      hash: md5
+      md5: 8731989d626471cd2886f2638e48423e
+      size: 1731
+    params:
+      params.yaml:
+        random_forest.max_depth: 20
+        random_forest.n_estimators: 30
+    outs:
+    - path: models/model.joblib
+      hash: md5
+      md5: 5c35ec0d0bc4df29e79dca1bf1674981
+      size: 143298

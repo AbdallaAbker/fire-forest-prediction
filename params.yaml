@@ -20,7 +20,7 @@ mlflow_config:
   run_name: random_forest
   registered_model_name: random_forest_model
   remote_server_uri: "http://localhost:1234"
-  experiment_ids: "625642776096586058"
+  experiment_ids: "1"
  
 random_forest: 
   max_depth: 20

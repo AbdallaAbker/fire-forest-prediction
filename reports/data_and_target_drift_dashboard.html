@@ -1,0 +1,301 @@
+{
+  "id": "df7d8728-7be2-49eb-9c37-0efda2edb061",
+  "name": null,
+  "timestamp": "2024-01-21T22:23:13.216345",
+  "metadata": {},
+  "tags": [],
+  "suite": {
+    "metrics": [
+      {
+        "type": "evidently.metrics.data_drift.column_drift_metric.ColumnDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "column_name": {
+          "type": "evidently.base_metric.ColumnName",
+          "name": "prediction",
+          "display_name": "prediction",
+          "dataset": "main",
+          "feature_class": null
+        },
+        "stattest": null,
+        "stattest_threshold": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.dataset_drift_metric.DatasetDriftMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "stattest": null,
+        "cat_stattest": null,
+        "num_stattest": null,
+        "text_stattest": null,
+        "per_column_stattest": null,
+        "stattest_threshold": null,
+        "cat_stattest_threshold": null,
+        "num_stattest_threshold": null,
+        "text_stattest_threshold": null,
+        "per_column_stattest_threshold": null,
+        "columns": null,
+        "drift_share": 0.5
+      },
+      {
+        "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValuesMetric",
+        "options": {
+          "color": null,
+          "render": null,
+          "custom": {}
+        },
+        "missing_values": [
+          "",
+          -Infinity,
+          null,
+          Infinity
+        ]
+      }
+    ],
+    "metric_results": [
+      {
+        "type": "evidently.calculations.data_drift.ColumnDataDriftMetrics",
+        "column_name": "prediction",
+        "column_type": "cat",
+        "stattest_name": "Z-test p_value",
+        "stattest_threshold": 0.05,
+        "drift_score": 0.5999749156797545,
+        "drift_detected": false,
+        "current": {
+          "type": "evidently.calculations.data_drift.DriftStatsField",
+          "distribution": {
+            "type": "evidently.metric_results.Distribution",
+            "x": [
+              0
+            ],
+            "y": [
+              3
+            ]
+          },
+          "characteristic_examples": null,
+          "characteristic_words": null,
+          "small_distribution": {
+            "type": "evidently.metric_results.DistributionIncluded",
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              3,
+              0
+            ]
+          },
+          "correlations": null
+        },
+        "reference": {
+          "type": "evidently.calculations.data_drift.DriftStatsField",
+          "distribution": {
+            "type": "evidently.metric_results.Distribution",
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              916,
+              84
+            ]
+          },
+          "characteristic_examples": null,
+          "characteristic_words": null,
+          "small_distribution": {
+            "type": "evidently.metric_results.DistributionIncluded",
+            "x": [
+              0,
+              1
+            ],
+            "y": [
+              916,
+              84
+            ]
+          },
+          "correlations": null
+        },
+        "scatter": null
+      },
+      {
+        "type": "evidently.metrics.data_drift.dataset_drift_metric.DatasetDriftMetricResults",
+        "drift_share": 0.5,
+        "number_of_columns": 4,
+        "number_of_drifted_columns": 0,
+        "share_of_drifted_columns": 0.0,
+        "dataset_drift": false
+      },
+      {
+        "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValuesMetricResult",
+        "current": {
+          "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValues",
+          "different_missing_values": {
+            "": 0,
+            "-Infinity": 0,
+            "null": 0,
+            "Infinity": 0
+          },
+          "number_of_different_missing_values": 0,
+          "different_missing_values_by_column": {
+            "Temperature": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Oxygen": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Humidity": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "target": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "prediction": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            }
+          },
+          "number_of_different_missing_values_by_column": {
+            "Temperature": 0,
+            "Oxygen": 0,
+            "Humidity": 0,
+            "target": 0,
+            "prediction": 0
+          },
+          "number_of_missing_values": 0,
+          "share_of_missing_values": 0.0,
+          "number_of_missing_values_by_column": {
+            "Temperature": 0,
+            "Oxygen": 0,
+            "Humidity": 0,
+            "target": 0,
+            "prediction": 0
+          },
+          "share_of_missing_values_by_column": {
+            "Temperature": 0.0,
+            "Oxygen": 0.0,
+            "Humidity": 0.0,
+            "target": 0.0,
+            "prediction": 0.0
+          },
+          "number_of_rows": 3,
+          "number_of_rows_with_missing_values": 0,
+          "share_of_rows_with_missing_values": 0.0,
+          "number_of_columns": 5,
+          "columns_with_missing_values": [],
+          "number_of_columns_with_missing_values": 0,
+          "share_of_columns_with_missing_values": 0.0
+        },
+        "reference": {
+          "type": "evidently.metrics.data_integrity.dataset_missing_values_metric.DatasetMissingValues",
+          "different_missing_values": {
+            "": 0,
+            "-Infinity": 0,
+            "null": 0,
+            "Infinity": 0
+          },
+          "number_of_different_missing_values": 0,
+          "different_missing_values_by_column": {
+            "Temperature": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Oxygen": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "Humidity": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "target": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            },
+            "prediction": {
+              "": 0,
+              "-Infinity": 0,
+              "null": 0,
+              "Infinity": 0
+            }
+          },
+          "number_of_different_missing_values_by_column": {
+            "Temperature": 0,
+            "Oxygen": 0,
+            "Humidity": 0,
+            "target": 0,
+            "prediction": 0
+          },
+          "number_of_missing_values": 0,
+          "share_of_missing_values": 0.0,
+          "number_of_missing_values_by_column": {
+            "Temperature": 0,
+            "Oxygen": 0,
+            "Humidity": 0,
+            "target": 0,
+            "prediction": 0
+          },
+          "share_of_missing_values_by_column": {
+            "Temperature": 0.0,
+            "Oxygen": 0.0,
+            "Humidity": 0.0,
+            "target": 0.0,
+            "prediction": 0.0
+          },
+          "number_of_rows": 1000,
+          "number_of_rows_with_missing_values": 0,
+          "share_of_rows_with_missing_values": 0.0,
+          "number_of_columns": 5,
+          "columns_with_missing_values": [],
+          "number_of_columns_with_missing_values": 0,
+          "share_of_columns_with_missing_values": 0.0
+        }
+      }
+    ],
+    "tests": [],
+    "test_results": [],
+    "options": {
+      "color": null,
+      "render": null,
+      "custom": {}
+    }
+  },
+  "metrics_ids": [
+    0,
+    1,
+    2
+  ],
+  "test_ids": [],
+  "options": {
+    "color": null,
+    "render": null,
+    "custom": {}
+  }
+}
